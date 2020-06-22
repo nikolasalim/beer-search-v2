@@ -5,5 +5,5 @@ export class Beer {
   description: string;
   image_url: string;
   abv: number;
-  yeast: string;
+  ingredients: { yeast: string };
 }

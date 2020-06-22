@@ -1,6 +1,6 @@
-<div>
-  <div class="body">
-    <img class="logo" />
+<div class="body">
+  <div class="left-box">
+    <img class="logo" src="../../../assets/logo.png" />
     <h1 class="title">uhhh... which one?</h1>
     <div class="search-box">
       <form
@@ -20,6 +20,7 @@
       <a href="#" (click)="onSelect($event)">{{ beer.name }}</a>
     </div>
   </div>
-
-  <app-beer-details [beerInfo]="selectedBeer"></app-beer-details>
+  <div class="right-box">
+    <app-beer-details [beerInfo]="selectedBeer"></app-beer-details>
+  </div>
 </div>
