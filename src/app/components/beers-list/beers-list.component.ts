@@ -8,14 +8,21 @@ import { Beer } from '../../models/Beer';
   styleUrls: ['./beers-list.component.scss'],
 })
 export class BeersListComponent implements OnInit {
-  beers: Beer[];
+  beers: any[];
+  searchTerm: string;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit() {
-    this.dataService.searchBeers('hardcore').subscribe((beer) => {
-      this.beers = beer;
-      console.log('this.beers is', this.beers);
+  ngOnInit() {}
+
+  searchBeers(searchTerm) {
+    return this.dataService.searchBeers(searchTerm).subscribe((beerList) => {
+      this.beers = beerList;
     });
+  }
+
+  onSubmit(searchTerm, event: Event) {
+    event.preventDefault();
+    this.searchBeers(searchTerm);
   }
 }
