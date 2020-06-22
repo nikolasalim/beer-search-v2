@@ -4,7 +4,7 @@
 
 // Colors
 
-$primary-color: rgb(37, 37, 37);
+$primary-color: black;
 $secondary-color: white;
 $tertiary-color: rgb(255, 208, 0);
 
@@ -16,6 +16,18 @@ $semibold: 700;
 $bold: 900;
 
 ////////// Mixins //////////
+
+// Color scheme
+
+@mixin colorNegative() {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+@mixin colorPositive() {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
 
 // Align
 

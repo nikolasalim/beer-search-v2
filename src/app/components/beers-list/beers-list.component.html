@@ -1,7 +1,13 @@
 <div class="body">
   <div class="left-box">
-    <img class="logo" src="../../../assets/logo.png" />
-    <h1 class="title">uhhh... which one?</h1>
+    <div class="logo-box">
+      <img class="logo" src="../../../assets/logo.png" />
+    </div>
+
+    <h1 class="title">
+      <p>"uhhh...</p>
+      <p>which one?"</p>
+    </h1>
     <div class="search-box">
       <form
         #form="ngForm"
@@ -11,13 +17,16 @@
           type="text"
           name="searchTerm"
           [(ngModel)]="searchTerm"
-          placeholder="search for a beer"
+          placeholder="search for a beer..."
+          class="search-bar"
         />
-        <button>or try your luck!</button>
       </form>
+      <button class="luck-btn">or try your luck!</button>
     </div>
     <div *ngFor="let beer of beers" class="list-box">
-      <a href="#" (click)="onSelect($event)">{{ beer.name }}</a>
+      <a class="beer-name" href="#" (click)="onSelect($event)">{{
+        beer.name
+      }}</a>
     </div>
   </div>
   <div class="right-box">
