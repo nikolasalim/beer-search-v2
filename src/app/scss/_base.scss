@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap");
+
+////////// Variables //////////
+
+// Colors
+
+$primary-color: black;
+$secondary-color: white;
+$tertiary-color: rgb(255, 208, 0);
+
+// Fonts
+
+$primary-font: "Source Sans Pro", sans-serif;
+$regular: 400;
+$semibold: 700;
+$bold: 900;
+
+////////// Mixins //////////
+
+// Color scheme
+
+@mixin colorNegative() {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+@mixin colorPositive() {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+// Align
+
+@mixin flexCenter($flex-direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flex-direction;
+}

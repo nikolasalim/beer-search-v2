@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="left-box">
+    <div class="logo-box">
+      <img class="logo" src="../../../assets/logo.png" />
+    </div>
+
+    <h1 class="title">
+      <p>"uhhh...</p>
+      <p>which one?"</p>
+    </h1>
+    <div class="search-box">
+      <form
+        #form="ngForm"
+        (ngSubmit)="onSubmit(searchTerm, $event); form.reset()"
+      >
+        <input
+          type="text"
+          name="searchTerm"
+          [(ngModel)]="searchTerm"
+          placeholder="search for a beer..."
+          class="search-bar"
+        />
+      </form>
+      <button class="luck-btn">or try your luck!</button>
+    </div>
+    <div *ngFor="let beer of beers" class="list-box">
+      <a class="beer-name" href="#" (click)="onSelect($event)">{{
+        beer.name
+      }}</a>
+    </div>
+  </div>
+  <div class="right-box">
+    <app-beer-details [beerInfo]="selectedBeer"></app-beer-details>
+  </div>
+</div>
