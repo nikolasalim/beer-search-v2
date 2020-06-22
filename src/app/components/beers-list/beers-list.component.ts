@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Beer } from '../../models/Beer';
 
 @Component({
   selector: 'app-beers-list',
@@ -7,11 +8,14 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./beers-list.component.scss'],
 })
 export class BeersListComponent implements OnInit {
+  beers: Beer[];
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService
-      .searchBeers()
-      .subscribe((beer) => console.log('beer is:', beer));
+    this.dataService.searchBeers('hardcore').subscribe((beer) => {
+      this.beers = beer;
+      console.log('this.beers is', this.beers);
+    });
   }
 }
