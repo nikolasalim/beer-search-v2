@@ -1,4 +1,15 @@
 <div>
-  <div *ngIf="!beerInfo">no beer displayed yet</div>
-  <div *ngIf="beerInfo">{{ beerInfo[0].description }}</div>
+  <div *ngIf="!beerInfo"></div>
+  <div *ngIf="beerInfo">
+    <img src="{{ beerInfo[0].image_url }}" alt="" class="image" />
+    <div class="bio">
+      <h2 class="name">{{ beerInfo[0].name }}</h2>
+      <h3 class="tagline">{{ beerInfo[0].tagline }}</h3>
+    </div>
+    <p class="description">{{ beerInfo[0].description }}</p>
+    <div class="stats">
+      <p><b>Abv:</b> {{ beerInfo[0].abv }}%</p>
+      <p><b>Yeast:</b> {{ beerInfo[0].ingredients.yeast }}</p>
+    </div>
+  </div>
 </div>
