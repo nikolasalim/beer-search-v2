@@ -37,7 +37,7 @@
       text-align: center;
     }
     .search-box {
-      @include flexCenter(column);
+      @include flexCenter(row);
 
       width: 100%;
 
@@ -47,6 +47,7 @@
         margin: 5px;
         border-radius: 15px;
         border: 1px solid $primary-color;
+        text-align: center;
 
         &::placeholder {
           text-align: center;
@@ -65,6 +66,13 @@
           @include yellowBg;
         }
       }
+    }
+
+    .results-title {
+      @include flexCenter("");
+      margin: 20px;
+      font-family: $secondary-font;
+      font-size: 1.5em;
     }
     .list-box {
       @include flexCenter("");

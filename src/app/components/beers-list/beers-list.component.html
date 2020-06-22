@@ -23,10 +23,15 @@
       </form>
       <button class="luck-btn">or try your luck!</button>
     </div>
-    <div *ngFor="let beer of beers" class="list-box">
-      <a class="beer-name" href="#" (click)="onSelect($event)">{{
-        beer.name
-      }}</a>
+    <div *ngIf="!beers"></div>
+    <div *ngIf="beers">
+      <p class="results-title">Results:</p>
+
+      <div *ngFor="let beer of beers" class="list-box">
+        <a class="beer-name" href="#" (click)="onSelect($event)">{{
+          beer.name
+        }}</a>
+      </div>
     </div>
   </div>
   <div class="right-box">
