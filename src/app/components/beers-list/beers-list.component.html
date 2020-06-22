@@ -16,6 +16,6 @@
     </form>
   </div>
   <div *ngFor="let beer of beers" class="list-box">
-    {{ beer.name }}
+    <a href="#" (click)="onSelect($event)">{{ beer.name }}</a>
   </div>
 </div>

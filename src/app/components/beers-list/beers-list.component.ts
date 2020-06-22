@@ -8,8 +8,9 @@ import { Beer } from '../../models/Beer';
   styleUrls: ['./beers-list.component.scss'],
 })
 export class BeersListComponent implements OnInit {
-  beers: any[];
+  beers: Beer[];
   searchTerm: string;
+  selectedBeer: Beer[];
 
   constructor(private dataService: DataService) {}
 
@@ -24,5 +25,11 @@ export class BeersListComponent implements OnInit {
   onSubmit(searchTerm, event: Event) {
     event.preventDefault();
     this.searchBeers(searchTerm);
+  }
+
+  onSelect(event) {
+    this.selectedBeer = this.beers.filter(
+      (b) => b.name === event.target.innerText
+    );
   }
 }
