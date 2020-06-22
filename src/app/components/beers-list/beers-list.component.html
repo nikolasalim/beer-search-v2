@@ -1,5 +1,5 @@
 <div class="body">
-  <div class="left-box">
+  <div class="first-box">
     <div class="logo-box">
       <img class="logo" src="../../../assets/logo.png" />
     </div>
@@ -26,7 +26,20 @@
       </button>
     </div>
     <div *ngIf="!beers"></div>
-    <div *ngIf="beers">
+
+    <div *ngIf="beers && !isMobile">
+      <p class="results-title">Results:</p>
+
+      <div *ngFor="let beer of beers" class="list-box">
+        <a class="beer-name" href="#" (click)="onSelect($event)">{{
+          beer.name
+        }}</a>
+      </div>
+    </div>
+
+    <!-- If in mobile, hide list of searched beers when selecting a beer:  -->
+
+    <div *ngIf="beers && !selectedBeer && isMobile">
       <p class="results-title">Results:</p>
 
       <div *ngFor="let beer of beers" class="list-box">
@@ -36,7 +49,7 @@
       </div>
     </div>
   </div>
-  <div class="right-box">
+  <div class="second-box">
     <app-beer-details [beerInfo]="selectedBeer"></app-beer-details>
   </div>
 </div>
