@@ -1,7 +1,10 @@
 <div>
   <div *ngIf="!beerInfo"></div>
-  <div *ngIf="beerInfo">
-    <img src="{{ beerInfo[0].image_url }}" alt="" class="image" />
+  <div *ngIf="beerInfo" class="body">
+    <div class="image-box">
+      <img src="{{ beerInfo[0].image_url }}" alt="" class="image" />
+    </div>
+
     <div class="bio">
       <h2 class="name">{{ beerInfo[0].name }}</h2>
       <h3 class="tagline">{{ beerInfo[0].tagline }}</h3>
