@@ -21,7 +21,9 @@
           class="search-bar"
         />
       </form>
-      <button class="luck-btn">or try your luck!</button>
+      <button class="luck-btn" (click)="searchRandomBeer()">
+        or try your luck!
+      </button>
     </div>
     <div *ngIf="!beers"></div>
     <div *ngIf="beers">

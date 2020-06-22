@@ -22,6 +22,12 @@ export class BeersListComponent implements OnInit {
     });
   }
 
+  searchRandomBeer() {
+    return this.dataService.searchRandomBeer().subscribe((beer) => {
+      this.selectedBeer = beer;
+    });
+  }
+
   onSubmit(searchTerm, event: Event) {
     event.preventDefault();
     this.searchBeers(searchTerm);
