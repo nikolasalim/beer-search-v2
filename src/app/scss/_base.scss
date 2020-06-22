@@ -23,13 +23,13 @@ $secondary-font: "Archivo Black", sans-serif;
 
 // Color scheme
 
-@mixin colorNegative() {
+@mixin blackBg() {
   background-color: $primary-color;
   color: $secondary-color;
 }
 
-@mixin colorPositive() {
-  background-color: $secondary-color;
+@mixin yellowBg() {
+  background-color: $tertiary-color;
   color: $primary-color;
 }
 
