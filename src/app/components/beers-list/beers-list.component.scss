@@ -10,6 +10,8 @@
     @include flexCenter(column);
     justify-content: flex-start;
     font-family: $primary-font;
+    font-weight: $regular;
+
     width: 50%;
     padding: 40px 0px;
     background-color: $secondary-color;
@@ -23,13 +25,16 @@
     }
     .title {
       @include flexCenter(column);
-      max-width: 80%;
+      max-width: 85%;
+      color: $primary-color;
+      margin: 40px 0px;
+
+      font-family: $secondary-font;
       font-weight: $bold;
       font-size: 6rem;
-      color: $primary-color;
-      letter-spacing: -0.4rem;
+      letter-spacing: -0.3rem;
       line-height: 5rem;
-      margin: 40px 0px;
+      text-align: center;
     }
     .search-box {
       @include flexCenter(column);

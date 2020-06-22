@@ -3,6 +3,8 @@
 .body {
   @include flexCenter(column);
   font-family: $primary-font;
+  font-weight: $regular;
+  text-align: center;
   width: 100%;
   height: 100vh;
 
@@ -21,10 +23,12 @@
     @include flexCenter(column);
     margin: 15px 0px;
     .name {
-      font-size: 1.7rem;
+      font-family: $secondary-font;
+      letter-spacing: -0.1rem;
+      font-size: 2.3rem;
     }
     .tagline {
-      font-size: 1.2rem;
+      font-weight: $bold;
     }
   }
   .description {
