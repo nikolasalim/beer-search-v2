@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 
 ////////// Variables //////////
 
@@ -11,21 +11,24 @@ $tertiary-color: rgb(255, 208, 0);
 // Fonts
 
 $primary-font: "Source Sans Pro", sans-serif;
+
 $regular: 400;
 $semibold: 700;
 $bold: 900;
+
+$secondary-font: "Archivo Black", sans-serif;
 
 ////////// Mixins //////////
 
 // Color scheme
 
-@mixin colorNegative() {
+@mixin blackBg() {
   background-color: $primary-color;
   color: $secondary-color;
 }
 
-@mixin colorPositive() {
-  background-color: $secondary-color;
+@mixin yellowBg() {
+  background-color: $tertiary-color;
   color: $primary-color;
 }
 

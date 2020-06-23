@@ -11,14 +11,26 @@ export class BeersListComponent implements OnInit {
   beers: Beer[];
   searchTerm: string;
   selectedBeer: Beer[];
+  isMobile: boolean;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (window.screen.width <= 768) {
+      this.isMobile = true;
+    }
+  }
 
   searchBeers(searchTerm) {
     return this.dataService.searchBeers(searchTerm).subscribe((beerList) => {
       this.beers = beerList;
+      this.selectedBeer = null;
+    });
+  }
+
+  searchRandomBeer() {
+    return this.dataService.searchRandomBeer().subscribe((beer) => {
+      this.selectedBeer = beer;
     });
   }
 
